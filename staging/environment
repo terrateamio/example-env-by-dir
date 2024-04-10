@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+export ENV_NAME=staging
+export ACCOUNT=staging-account
+export ACCOUNT_SECRET="$STAGING_ACCOUNT_SECRET"

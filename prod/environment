@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+export ENV_NAME=prod
+export ACCOUNT=prod-account
+export ACCOUNT_SECRET="$PROD_ACCOUNT_SECRET"

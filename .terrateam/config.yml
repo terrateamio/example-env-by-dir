@@ -1,0 +1,22 @@
+dirs:
+  'prod/**/*.tf':
+    tags: [prod]
+  'dev/**/*.tf':
+    tags: [dev]
+  'staging/**/*.tf':
+    tags: [staging]
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: env
+        method: source
+        cmd: ['environment']
+      - type: init
+      - type: plan
+    apply:
+      - type: env
+        method: source
+        cmd: ['environment']
+      - type: init
+      - type: apply

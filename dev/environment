@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+export ENV_NAME=dev
+export ACCOUNT=dev-account
+export ACCOUNT_SECRET="$DEV_ACCOUNT_SECRET"
