@@ -1,11 +1,13 @@
-dirs:
-  'prod/**/*.tf':
-    tags: [prod]
-  'dev/**/*.tf':
-    tags: [dev]
-  'staging/**/*.tf':
-    tags: [staging]
-
+# The workflow is the same for each directory (prod, staging, dev), and what is
+# unique about them comes from the execution of the "environment" script.
+#
+# Workflows are executed with the current working directory of the directory it
+# is executing on.  For example, when running the workflow for the "prod" dir,
+# the current working directory will be sent to "prod/", this way the
+# "environment" script is the one that exists in that directory.
+#
+# This means that the configuration prod is in the prod directory, staging in
+# staging, and dev in dev, simplifying the Terrateam configuration.
 workflows:
   - tag_query: ''
     plan:
